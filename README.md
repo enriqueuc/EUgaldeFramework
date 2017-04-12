@@ -2,17 +2,19 @@
 
 How to create a Framework
 
-Open XCode, then File -  New - Project
-Choose iOS - Cocoa Touch Static Library
+Open XCode, then File -  New - Project.
+Choose iOS - Cocoa Touch Static Library.
 Put the name you want, select the location and click create.
-If you want, you can delete the .m file and the whole content of the .h file
-Create a new Cocoa Touch Class and name it as you want
+If you want, you can delete the .m file and the whole content of the .h file.
+Create a new Cocoa Touch Class and name it as you want.
 In the main header (the one named as your framework) import your new class header like:
+	
 	#import <mainHeader/newClassHeader.h>
-Add some content to your framework, in this case we need to do a class instance to the fw works properly
-Go to the Framweork Target to add the headers you are going to expose 
-Select the Bluid phases tab of your Framework Target, click the + button on the left top corner and select New Headers Phase
-Open the Headers row that was created and click the + button, the select your headers files and click add, this will add your .h files to the project row; finally move the .h files you want to be public to the public row by click and drag 
+	
+Add some content to your framework, in this case we need to do a class instance to the fw works properly.
+Go to the Framweork Target to add the headers you are going to expose.
+Select the Bluid phases tab of your Framework Target, click the + button on the left top corner and select New Headers Phase.
+Open the Headers row that was created and click the + button, the select your headers files and click add, this will add your .h files to the project row; finally move the .h files you want to be public to the public row by click and drag.
 To change the public headers location select the Target in Project Navigator and click Build Settings tab, then search for Public Headers and replace the usr/local/include with "$(PROJECT_NAME)Headers" (without the "") for all configurations
 Change the next configuration on your Target Build settings tab:
 	"Dead Code Stripping" => No (for all settings)
